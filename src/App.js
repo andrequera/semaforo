@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+// importar useState
 import './App.css';
 
+
 function App() {
+  const [state, setState] = useState("apagado")
+  // const prenderluz = () => {
+    // if (state === "apagado") {
+    //   setState("encendida")
+    // }
+    // else if (state === "encendida") {
+    //   setState("apagado")
+
+    // }
+  // }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    <div className="cajanegra">
+      <div className={"rojo " + (state === "rojo"? "encendida" : "")} onClick= {()=> setState("rojo")}> </div>
+      <div className={"amarillo " + (state === "amarillo"? "encendida" : "")} onClick={()=> setState("amarillo")}></div>
+      <div className={"verde " + (state === "verde"? "encendida" : "")} onClick={()=> setState("verde")}></div>
     </div>
+
+
+
   );
+  // recuerda el frag
 }
 
 export default App;
